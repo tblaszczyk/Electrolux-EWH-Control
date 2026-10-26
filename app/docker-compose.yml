@@ -1,0 +1,15 @@
+services:
+  boiler:
+    build:
+      context: .
+      dockerfile: docker/Dockerfile
+    container_name: boiler-system
+    ports:
+      - "8888:8888"
+    volumes:
+      - ./data_storage:/var/lib/boiler
+      - ./logs:/var/log/boiler
+    env_file:
+      - .env
+    restart: unless-stopped
+    network_mode: host   # wymagane dla UDP (komunikacja z bojlerem w LAN)

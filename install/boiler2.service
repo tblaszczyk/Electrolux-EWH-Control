@@ -1,0 +1,19 @@
+[Unit]
+Description=Boiler Control System v2
+After=network.target
+
+[Service]
+Type=simple
+User=www-data
+WorkingDirectory=/opt/boiler2/app
+ExecStart=/opt/boiler/venv/bin/python3 /opt/boiler2/app/main.py
+Restart=always
+RestartSec=10
+StandardOutput=append:/opt/boiler2/logs/boiler.log
+StandardError=append:/opt/boiler2/logs/boiler.log
+Environment=LOG_DIR=/opt/boiler2/logs
+Environment=DB_PATH=/opt/boiler2/data/boiler.db
+Environment=CFG_FILE=/opt/boiler2/data/config.json
+
+[Install]
+WantedBy=multi-user.target

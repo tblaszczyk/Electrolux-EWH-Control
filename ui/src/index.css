@@ -1,0 +1,70 @@
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --font-main: 'Space Grotesk', sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
+  --radius: 16px;
+  --radius-sm: 10px;
+  --transition: 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* ── DARK THEME ─────────────────────────────────────────────── */
+[data-theme="dark"] {
+  --bg:         #0a0f1e;
+  --bg2:        #111827;
+  --bg3:        #1e2a3a;
+  --bg4:        #243044;
+  --border:     rgba(255,255,255,0.08);
+  --text:       #f1f5f9;
+  --text2:      #94a3b8;
+  --text3:      #64748b;
+  --accent:     #38bdf8;
+  --accent2:    #0ea5e9;
+  --green:      #22c55e;
+  --orange:     #f97316;
+  --red:        #ef4444;
+  --yellow:     #eab308;
+  --purple:     #a855f7;
+  --card-shadow: 0 4px 24px rgba(0,0,0,0.4);
+  --glow:       0 0 24px rgba(56,189,248,0.15);
+}
+
+/* ── LIGHT THEME ────────────────────────────────────────────── */
+[data-theme="light"] {
+  --bg:         #f0f4f8;
+  --bg2:        #ffffff;
+  --bg3:        #e8eef5;
+  --bg4:        #d1dce8;
+  --border:     rgba(0,0,0,0.08);
+  --text:       #0f172a;
+  --text2:      #475569;
+  --text3:      #94a3b8;
+  --accent:     #0284c7;
+  --accent2:    #0369a1;
+  --green:      #16a34a;
+  --orange:     #ea580c;
+  --red:        #dc2626;
+  --yellow:     #ca8a04;
+  --purple:     #9333ea;
+  --card-shadow: 0 2px 16px rgba(0,0,0,0.08);
+  --glow:       0 0 24px rgba(2,132,199,0.1);
+}
+
+html, body {
+  height: 100%;
+  font-family: var(--font-main);
+  background: var(--bg);
+  color: var(--text);
+  transition: background var(--transition), color var(--transition);
+  -webkit-font-smoothing: antialiased;
+}
+
+#root { height: 100%; }
+
+/* ── SCROLLBAR ──────────────────────────────────────────────── */
+::-webkit-scrollbar { width: 6px; height: 6px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: var(--bg4); border-radius: 99px; }
+
+/* ── UTILITY ────────────────────────────────────────────────── */
+.mono { font-family: var(--font-mono); }

@@ -1,0 +1,25 @@
+# Secrets & local runtime config
+app/.env
+data/config.json
+data/boiler.db
+data/boiler.db-shm
+data/boiler.db-wal
+data/boiler_fixed.db
+*.bak-*
+
+# App runtime data
+app/data_storage/
+logs/
+
+# Python
+**/__pycache__/
+**/*.pyc
+**/*.pyo
+.pytest_cache/
+
+# Node
+ui/node_modules/
+ui/build/
+app/vendor/
+data/tuya_session.json
+data/ntfy.url
